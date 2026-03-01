@@ -38,12 +38,27 @@
 
     <p>Good luck with your HSK preparation!</p>
     <button onclick="showAlert()">Show Alert</button>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        <div>hallokitty</div>
+    </canvas>
     <script>
         function showAlert() {
             alert("你好，我是一个警告框！");
-            
+
         }
+        if (typeof window !== 'undefined') {
+            const canvas = document.getElementById('myCanvas');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                ctx.font = '20px Arial';
+                ctx.fillText('hallokitty', 10, 50);
+            } else {
+                console.error('Canvas is not supported in this browser.');
+            }
+        }
+
     </script>
+
 </body>
 
 </html>
